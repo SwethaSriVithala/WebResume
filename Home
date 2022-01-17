@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Swetha Sri Vithala</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+	font-family: "Times New Roman";
+	font-style: italic;
+}
+
+.hero-image {
+  background-image: url("https://img3.goodfon.com/wallpaper/nbig/4/22/devushka-chernyy-fon-profil.jpg");
+  background-color: #cccccc;
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.sidebar {
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: #111;
+	overflow-x: hidden;
+	transition: 0.5s;
+	padding-top: 60px;
+}
+
+.content {
+	padding: 0 18px;
+	display: none;
+	overflow: hidden;
+	background-color: #ded9d9;
+}
+
+#sidebtn {
+	font-size: 15px;
+	cursor: pointer;
+	background-color: #ded9d9;
+	color: black;
+	padding: 10px 15px;
+	border: none;
+}
+
+.collapsible {
+	background-color: #111;
+	color: white;
+	cursor: pointer;
+	padding: 18px;
+	width: 100%;
+	border: none;
+	text-align: left;
+	outline: none;
+	font-size: 15px;
+}
+
+.active, .collapsible:hover {
+	background-color: #555;
+}
+
+.sidebar a {
+	padding: 8px 8px 8px 32px;
+	text-decoration: none;
+	font-size: 25px;
+	color: #818181;
+	display: block;
+	transition: 0.3s;
+}
+
+.sidebar a:hover {
+	color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+	position: absolute;
+	top: 0;
+	right: 25px;
+	font-size: 36px;
+	margin-left: 50px;
+}
+
+.openbtn {
+	font-size: 20px;
+	cursor: pointer;
+	background-color: #111;
+	color: white;
+	padding: 10px 15px;
+	border: none;
+}
+
+.openbtn:hover {
+	background-color: #444;
+}
+
+#main {
+	transition: margin-left .5s;
+	padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+	.sidebar {padding-top: 15px;}
+	.sidebar a {font-size: 18px;}
+}
+.fa-skype {
+  background: #00aff0;
+  color: white;
+}
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+.fa {
+  padding: 5px;
+  font-size: 30px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+}
+.fa:hover {
+    opacity: 0.7;
+}
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #818181;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+img {
+  border: none;
+  margin: 0px 0px 15px 20px;
+}
+input[type=text], select {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+textarea {
+	width: 100%;
+	height: 150px;
+	padding: 12px 20px;
+	box-sizing: border-box;
+	border: 2px solid #ccc;
+	border-radius: 4px;
+	resize: none;
+}
+input[type=submit] {
+	width: 100%;
+	background-color: #4CAF50;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+input[type=submit]:hover {
+	background-color: #45a049;
+}
+.actionform {
+	border-radius: 5px;
+	background-color: #f2f2f2;
+	padding: 20px;
+}
+</style>
+</head>
+
+<body>
+<div id="mySidebar" class="sidebar">
+	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+	<button type="button" class="collapsible">About Me</button>
+	<div class="content">
+		<p><a id="sidebtn" href="#MyDetails">My details</a></p>
+		<p><a id="sidebtn" href="#resume">Resume</a></p>
+	</div>
+	<button type="button" class="collapsible">My Projects</button>
+	<div class="content">
+		<p><a id="sidebtn" href="#convncal">Conversions and Calculations</a></p>
+		<p><a id="sidebtn" href="#quiz">My Quiz</a></p>
+		<p><a id="sidebtn" href="#heirloom">Heirloom</a></p>
+	</div>
+	<button type="button" class="collapsible">My Blogs</button>
+	<div class="content">
+		<p><a id="sidebtn" href="#MyBlog">My Blog</a></p>
+	</div>
+	<button type="button" class="collapsible" >Reach me</button>
+	<div class="content">
+		<p><a id="sidebtn" href="#ContactMe">Contact Me</a></p>
+	</div>
+</div>
+<div id="main">
+	<button class="openbtn" onclick="openNav()">☰ Menu</button>  
+	<div class="hero-image">
+		<div class="hero-text">
+			<h1 style="font-size:50px">I am Swetha Sri Vithala</h1>
+			<h3>A Software Tester,</h3>
+			<h3>A Web designer,</h3>
+			<h3>A Mobile app developer and</h3>
+			<h3>An Enterpreneur</h3>
+		</div>
+	</div>
+	<h2 id="MyDetails">About Me</h2>
+	<p><img src="https://www.clipartqueen.com/image-files/graduation-clipart-cap-diploma.png" width="100" height="100" style="float:left">Now thinking of my high school days, i used to be so arrogant that i don't even know how i managed myself a job, let alone my career. Woww... What a beautiful days they were...<br>But... I enjoyed myself too much up then, i got my results in the same way. Just Average.</p>
+	<p>My junior college was never fun. I remember those days that stayed up late to study for exams, tests and quizes. Well...that nose to the grindstone did work, i got a bit better score. Thats how i ended up in college.</p>
+	<p>I will never forgot my college days. The enjoyment during annual festivals and welcome parties. It was a mixture of happiness, enjoyment, hard work and struggle. I was independent for once, started to have confidence on self. Without even knowing what happened in my life, i am already in my third year. No its time to think about me, i pasted "Its never too late to start working on yourself..." quote in my bedroom and started taking everything seriously. </p>
+	
+	<h2>Work Experience</h2>
+	<p><img src="https://thumbs.dreamstime.com/b/business-career-woman-24607353.jpg" width="100" height="120" style="float:left">Moved myself to 'Hyderabad', admitted myself in institute 'QSpiders'. Finally, i joined 'Zen Quality Assurance Pvt Ltd' as 'Test Engineer' in Mar. 2018</p>
+	<p>As 'Test Engineer', i worked in a team. I tried my best to show myself in a team. My hard work payed off, i have been promoted as 'Senior Test Engineer'</p>
+	<p>As 'Senior Test Engineer', i started working individually, handled a project. Communicating directly to my manager and everything. After a year as single resource, our management thought i am too precious for the project i am working on and moved me.<br>Then i started handling a project and team alone. Now communicating with clients, estimating test time, developing test plans and so on. Later i have moved from ZenQ</p>
+	<p>I have started in JDPLC as 'Test Analyst' in Dec. 2021</p>
+	<p>As 'Test Analyst', i again started working in a team, now the team is big, hard to let the management know my name. Yet...i did it, yeah...it took a while but i did it. Slowly i started handling a shift and have been promoted as 'Senior Test Analyst'</p>
+	<p>Recently started working as freelancing automation tester and a web designer.</p>
+
+	
+	<h2 id="convncal">Conversions and Calculations</h2>
+	<p>This is the first web and mobile application i have ever created</p>
+	<p>Visit Website: <a href=#>convncal.com</a></p>
+	<p>Download Mobile App: </p>
+	
+	
+	<h2 id="quiz">My Quiz</h2>
+	<p>I am a bit proud of myself on the knowledge i have on hindu mythology and always love to know more. So this gave me an idea...<br>I can say this App is for mythological geeks like me.</p>
+	<p>Download Mobile App: </p>
+	
+	<h2 id="heirloom">Heirloom</h2>
+	<p>Heirloom - Family is a gift.</p>
+	<p>Download Mobile App: </p>
+	
+	<h2 id="MyBlog">My Blog</h2>
+	
+	<h2 id="ContactMe">Contact Me</h2>
+	<h2 id="resume">Resume</h2>
+	<p>You have a job for me...Great...I love working</p>
+	<p>To reach me...you can email me directly from here...</p>
+	<div class="contactcontent">
+		<div class="actionform">
+			<form action="/action_page.php">
+				<label for="fname">Name</label>
+				<input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+				<label for="email">Email</label>
+				<input type="text" id="email" name="email" placeholder="Your email..">
+				
+				<label for="content">Content</label>
+				<textarea placeholder="Your content.."></textarea>
+				
+				<input type="submit" value="Submit">
+			</form>
+		</div>
+	</div>
+	<div>
+		<p>I am available in social media too...
+		<a href="https://twitter.com/swethavithala" class="fa fa-twitter"></a>
+		<a href="https://join.skype.com/invite/x5xcI4MTJYp4" class="fa fa-skype"></a>
+		<a href="https://www.linkedin.com/in/swetha-sri-vithala-b4b160102/" class="fa fa-linkedin"></a>
+		</p>
+	</div>
+	<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+</div>
+
+
+<script>
+
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+	coll[i].addEventListener("click", function() {
+		this.classList.toggle("active");
+		var content = this.nextElementSibling;
+		if (content.style.display === "block") {
+			content.style.display = "none";
+		} 
+		else {
+			content.style.display = "block";
+		}
+	});
+}
+
+function openNav() {
+	document.getElementById("mySidebar").style.width = "250px";
+	document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+	document.getElementById("mySidebar").style.width = "0";
+	document.getElementById("main").style.marginLeft= "0";
+}
+
+var mybutton = document.getElementById("myBtn");
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+   
+</body>
+</html> 
